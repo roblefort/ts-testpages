@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Permanent Resident Visa for Foreign Property Owners | Title Solutions</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    /* TS brand palette — pulled from the live site */
+    --ts-green:        #0e6b5e;
+    --ts-green-deep:   #0a554a;
+    --ts-green-soft:   #1e8a7a;
+    --ts-green-tint:   #e8f3f0;
+    --ts-green-tint-2: #f4f9f7;
+
+    --ts-ink:          #2a3848;
+    --ts-ink-soft:     #4a5868;
+    --ts-ink-muted:    #7a8290;
+
+    --ts-coral:        #e87a5d;
+    --ts-coral-deep:   #d96849;
+
+    --ts-bg:           #ffffff;
+    --ts-line:         #e5e8ec;
+    --ts-line-soft:    #eef0f3;
+
+    --ts-danger:       #b54a3a;
+
+    --ts-sans: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+    --ts-shadow-card: 0 1px 2px rgba(42,56,72,.04), 0 8px 24px rgba(42,56,72,.06);
+    --ts-shadow-cta:  0 6px 18px rgba(14,107,94,.25);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: var(--ts-sans);
+    color: var(--ts-ink);
+    background: var(--ts-bg);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: var(--ts-sans);
+    color: var(--ts-ink);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1.15;
+  }
+  .eyebrow {
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ts-green);
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+  }
+  .eyebrow::after {
+    content: '';
+    width: 48px;
+    height: 2px;
+    background: var(--ts-green);
+  }
+  .lead {
+    font-size: 1.0625rem;
+    color: var(--ts-ink-soft);
+    line-height: 1.7;
+  }
+
+  .container { max-width: 1200px; margin: 0 auto; padding: 0 32px; }
+  section { padding: 96px 0; }
+  @media (max-width: 720px) {
+    section { padding: 64px 0; }
+    .container { padding: 0 20px; }
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 16px 30px;
+    font-family: var(--ts-sans);
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    border-radius: 2px;
+    transition: transform .18s ease, box-shadow .18s ease, background .18s ease;
+  }
+  .btn-primary {
+    background: var(--ts-green);
+    color: white;
+    box-shadow: var(--ts-shadow-cta);
+  }
+  .btn-primary:hover { background: var(--ts-green-deep); transform: translateY(-1px); }
+  .btn-primary .arrow { transition: transform .18s ease; display: inline-block; }
+  .btn-primary:hover .arrow { transform: translateX(4px); }
+
+  .btn-outline {
+    background: transparent;
+    color: var(--ts-green);
+    border: 1.5px solid var(--ts-green);
+    padding: 14.5px 28.5px;
+  }
+  .btn-outline:hover { background: var(--ts-green-tint); }
+
+  /* Top bar */
+  .topbar {
+    background: white;
+    padding: 18px 0;
+    border-bottom: 1px solid var(--ts-line);
+    font-size: 14px;
+  }
+  .topbar .container { display: flex; justify-content: space-between; align-items: center; gap: 24px; }
+  .topbar .logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+  .topbar .logo-mark { width: 32px; height: 22px; color: var(--ts-green); }
+  .topbar .logo-text {
+    font-weight: 700; font-size: 18px; letter-spacing: 0.08em; color: var(--ts-ink); line-height: 1;
+  }
+  .topbar .logo-text span {
+    display: block; font-size: 11px; font-weight: 500; letter-spacing: 0.18em;
+    color: var(--ts-ink-muted); margin-top: 4px;
+  }
+  .topbar .crumbs { color: var(--ts-ink-muted); font-size: 13px; }
+  .topbar .crumbs a { color: var(--ts-ink-soft); text-decoration: none; }
+  .topbar .crumbs a:hover { color: var(--ts-green); }
+
+  /* Hero */
+  .hero { background: var(--ts-bg); padding: 80px 0 96px; position: relative; }
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 64px;
+    align-items: center;
+  }
+  @media (max-width: 980px) { .hero-grid { grid-template-columns: 1fr; gap: 48px; } }
+  .hero h1 {
+    font-size: clamp(2.2rem, 4.4vw, 3.4rem);
+    margin: 22px 0 24px;
+    max-width: 18ch;
+  }
+  .hero h1 em { font-style: normal; color: var(--ts-green); }
+  .hero-sub {
+    font-size: 1.125rem; color: var(--ts-ink-soft); line-height: 1.7;
+    max-width: 55ch; margin-bottom: 36px;
+  }
+  .hero-actions { display: flex; gap: 16px; flex-wrap: wrap; }
+
+  .stat-panel {
+    background: var(--ts-green-tint-2);
+    border-left: 3px solid var(--ts-green);
+    padding: 40px 36px;
+    position: relative;
+  }
+  .stat-panel .label {
+    font-size: 12px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase;
+    color: var(--ts-green); margin-bottom: 14px;
+  }
+  .stat-panel .figure {
+    font-size: 4rem; font-weight: 700; line-height: 1; color: var(--ts-ink);
+    letter-spacing: -0.03em;
+  }
+  .stat-panel .figure span {
+    font-size: 1.5rem; color: var(--ts-green); font-weight: 600; margin-left: 8px;
+  }
+  .stat-panel .caption {
+    font-size: 0.95rem; color: var(--ts-ink-soft); margin-top: 14px; line-height: 1.55;
+  }
+  .stat-panel .divider { height: 1px; background: rgba(14,107,94,.18); margin: 28px 0; }
+  .stat-panel .secondary-figure { font-size: 1.6rem; font-weight: 700; color: var(--ts-ink); }
+  .stat-panel .secondary-figure span { color: var(--ts-green); }
+  .stat-panel .footnote { font-size: 0.85rem; color: var(--ts-ink-muted); margin-top: 8px; line-height: 1.5; }
+
+  /* Two paths */
+  .paths { background: var(--ts-green-tint-2); }
+  .section-head { text-align: center; max-width: 720px; margin: 0 auto 56px; }
+  .section-head h2 { font-size: clamp(1.9rem, 3.4vw, 2.6rem); margin: 14px 0 18px; }
+
+  .paths-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 24px; align-items: stretch;
+  }
+  @media (max-width: 820px) { .paths-grid { grid-template-columns: 1fr; } }
+
+  .path-card {
+    background: white; padding: 40px; position: relative;
+    border-top: 4px solid var(--ts-line); border-radius: 4px;
+  }
+  .path-card.bad { border-top-color: var(--ts-danger); }
+  .path-card.good { border-top-color: var(--ts-green); background: var(--ts-green); color: white; }
+
+  .path-tag {
+    display: inline-block;
+    font-size: 11px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase;
+    padding: 6px 12px; margin-bottom: 20px; border-radius: 2px;
+  }
+  .path-card.bad  .path-tag { background: rgba(181,74,58,.1); color: var(--ts-danger); }
+  .path-card.good .path-tag { background: rgba(255,255,255,.18); color: white; }
+
+  .path-card h3 { font-size: 1.6rem; margin-bottom: 14px; }
+  .path-card.good h3 { color: white; }
+  .path-card p.path-desc { font-size: 0.95rem; color: var(--ts-ink-soft); margin-bottom: 24px; }
+  .path-card.good p.path-desc { color: rgba(255,255,255,.85); }
+
+  .path-list { list-style: none; }
+  .path-list li {
+    font-size: 0.95rem; padding: 14px 0 14px 30px;
+    border-bottom: 1px solid var(--ts-line-soft); position: relative;
+    color: var(--ts-ink-soft); line-height: 1.55;
+  }
+  .path-card.good .path-list li {
+    color: rgba(255,255,255,.92); border-bottom-color: rgba(255,255,255,.18);
+  }
+  .path-list li:last-child { border-bottom: none; }
+
+  .path-card.bad .path-list li::before {
+    content: '✕';
+    position: absolute; left: 0; top: 14px;
+    font-size: 13px; font-weight: 700; color: var(--ts-danger);
+    width: 18px; height: 18px;
+    background: rgba(181,74,58,.1); border-radius: 50%;
+    display: flex; align-items: center; justify-content: center; line-height: 1;
+  }
+  .path-card.good .path-list li::before {
+    content: '✓';
+    position: absolute; left: 0; top: 14px;
+    font-size: 12px; font-weight: 700; color: var(--ts-green);
+    width: 18px; height: 18px;
+    background: white; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center; line-height: 1;
+  }
+
+  /* Benefits */
+  .benefits { background: var(--ts-bg); }
+  .benefits-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+  @media (max-width: 900px) { .benefits-grid { grid-template-columns: 1fr; } }
+
+  .benefit-card {
+    background: white; padding: 40px 32px;
+    border: 1px solid var(--ts-line); border-radius: 4px;
+    position: relative;
+    transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+  }
+  .benefit-card:hover {
+    transform: translateY(-4px); box-shadow: var(--ts-shadow-card);
+    border-color: var(--ts-green-tint);
+  }
+  .benefit-num {
+    font-size: 2rem; color: var(--ts-green); line-height: 1; font-weight: 700;
+    margin-bottom: 4px; letter-spacing: -0.02em;
+  }
+  .benefit-num::after {
+    content: ''; display: block; width: 28px; height: 2px;
+    background: var(--ts-green); margin-top: 14px;
+  }
+  .benefit-card h3 { font-size: 1.25rem; margin: 22px 0 14px; }
+  .benefit-card p { font-size: 0.95rem; color: var(--ts-ink-soft); line-height: 1.65; }
+
+  /* Timeline */
+  .timeline-section { background: var(--ts-green); color: white; position: relative; }
+  .timeline-section .section-head h2 { color: white; }
+  .timeline-section .section-head .lead { color: rgba(255,255,255,.82); }
+  .timeline-section .eyebrow { color: rgba(255,255,255,.85); }
+  .timeline-section .eyebrow::after { background: rgba(255,255,255,.6); }
+
+  .timeline {
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 0;
+    position: relative; margin-top: 32px;
+  }
+  @media (max-width: 820px) { .timeline { grid-template-columns: 1fr; } }
+
+  .timeline-step { padding: 0 24px; position: relative; padding-top: 60px; }
+  .timeline-step::before {
+    content: '';
+    position: absolute; top: 18px; left: 24px; right: 24px;
+    height: 2px; background: rgba(255,255,255,.3);
+  }
+  .timeline-step:last-child::before { right: calc(50% - 12px); }
+  .timeline-step:first-child::before { left: calc(50% - 12px); }
+  @media (max-width: 820px) {
+    .timeline-step::before { display: none; }
+    .timeline-step { padding: 28px 0; border-bottom: 1px solid rgba(255,255,255,.18); }
+  }
+
+  .timeline-dot {
+    position: absolute; top: 4px; left: 50%; transform: translateX(-50%);
+    width: 30px; height: 30px; border-radius: 50%;
+    background: white; color: var(--ts-green);
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 700; font-size: 13px; z-index: 2;
+    box-shadow: 0 0 0 6px var(--ts-green);
+  }
+  @media (max-width: 820px) {
+    .timeline-dot { position: relative; left: 0; transform: none; margin-bottom: 16px; }
+  }
+
+  .timeline-step h4 { font-size: 1.1rem; color: white; margin-bottom: 10px; font-weight: 700; }
+  .timeline-step .duration {
+    font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase;
+    color: rgba(255,255,255,.85); margin-bottom: 12px;
+    padding-bottom: 12px; border-bottom: 1px solid rgba(255,255,255,.2);
+  }
+  .timeline-step p { font-size: 0.92rem; color: rgba(255,255,255,.8); line-height: 1.55; }
+
+  .timeline-callout {
+    margin-top: 56px; padding: 28px 32px;
+    background: var(--ts-green-deep); border-left: 3px solid var(--ts-coral);
+    display: flex; gap: 20px; align-items: flex-start;
+    border-radius: 0 4px 4px 0;
+  }
+  .timeline-callout .icon {
+    flex-shrink: 0; width: 32px; height: 32px;
+    background: var(--ts-coral); border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    color: white; font-size: 16px; font-weight: 700;
+  }
+  .timeline-callout .text { font-size: 1rem; color: white; line-height: 1.65; }
+  .timeline-callout strong { color: white; font-weight: 700; }
+
+  /* Final CTA */
+  .cta-section { background: var(--ts-green-tint-2); text-align: center; position: relative; }
+  .cta-section .container { max-width: 720px; }
+  .cta-section h2 { font-size: clamp(1.9rem, 3.4vw, 2.5rem); margin: 14px 0 20px; }
+  .cta-section .lead { margin-bottom: 36px; }
+  .cta-section .reassurance { margin-top: 24px; font-size: 13px; color: var(--ts-ink-muted); }
+
+  .footer-mini {
+    background: var(--ts-ink); color: rgba(255,255,255,.7);
+    padding: 32px 0; font-size: 13px; text-align: center;
+  }
+  .footer-mini a { color: white; text-decoration: none; }
+
+  /* Floating coral contact pill matching live site */
+  .floating-contact {
+    position: fixed; bottom: 28px; right: 28px;
+    background: var(--ts-coral); color: white;
+    padding: 12px 22px 12px 16px; border-radius: 999px;
+    font-size: 13px; font-weight: 600; letter-spacing: 0.06em;
+    text-transform: uppercase; text-decoration: none;
+    display: inline-flex; align-items: center; gap: 10px;
+    box-shadow: 0 8px 24px rgba(232,122,93,.4); z-index: 100;
+    transition: background .18s ease, transform .18s ease;
+  }
+  .floating-contact:hover { background: var(--ts-coral-deep); transform: translateY(-2px); }
+  .floating-contact .wa {
+    width: 22px; height: 22px;
+    background: white; color: var(--ts-coral);
+    border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: 13px; font-weight: 700;
+  }
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="container">
+    <a href="/" class="logo">
+      <svg class="logo-mark" viewBox="0 0 32 22" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M2 2 L16 18 L30 2" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M6 6 L16 16 L26 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity=".55"/>
+      </svg>
+      <div class="logo-text">TITLE<span>SOLUTIONS</span></div>
+    </a>
+    <nav class="crumbs">
+      <a href="/">Home</a> &nbsp;/&nbsp; <a href="/buyers-sellers">Buyers &amp; Sellers</a> &nbsp;/&nbsp; Immigration Services
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container">
+    <div class="hero-grid">
+      <div>
+        <div class="eyebrow">Immigration Services</div>
+        <h1>The decision that quietly determines <em>how much you keep</em> when you sell.</h1>
+        <p class="hero-sub">
+          The average foreign buyer in Mexico becomes a seller within 6 to 7 years &mdash; and at that moment, capital gains tax is calculated on their nationality, their residency status, and the documents they prepared years earlier. A Permanent Resident Visa is the single most powerful instrument available to you to lawfully reduce that tax exposure. Title Solutions handles the legal process end&nbsp;to&nbsp;end.
+        </p>
+        <div class="hero-actions">
+          <a href="#apply" class="btn btn-primary">
+            Apply for Your Visa <span class="arrow">→</span>
+          </a>
+          <a href="#how" class="btn btn-outline">How it works</a>
+        </div>
+      </div>
+
+      <aside class="stat-panel" aria-label="Key timing fact">
+        <div class="label">The Quiet Clock</div>
+        <div class="figure">6&ndash;7<span>years</span></div>
+        <div class="caption">Average time between purchase and resale for foreign buyers in Mexico.</div>
+        <div class="divider"></div>
+        <div class="label" style="margin-bottom:10px;">From application to card</div>
+        <div class="secondary-figure"><span>~</span> 4 to 8 months</div>
+        <div class="footnote">Government processing alone is 3&ndash;6 months on average. Beginning early is not optional &mdash; it is the entire mechanism.</div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<section class="paths" id="how">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">Two paths to the same paperwork</div>
+      <h2>Why it matters who handles your application.</h2>
+      <p class="lead">A Permanent Resident Visa is not a form to file. It is a legal status that anchors your tax position when you eventually sell. The party who prepares it should be qualified to defend it.</p>
+    </div>
+
+    <div class="paths-grid">
+
+      <article class="path-card bad">
+        <span class="path-tag">An unqualified intermediary</span>
+        <h3>The "tramitador" route.</h3>
+        <p class="path-desc">Common, cheap, and undocumented. A facilitator submits paperwork on your behalf with no legal standing.</p>
+        <ul class="path-list">
+          <li>No legal accountability if your application is rejected or delayed.</li>
+          <li>No advisory on how your residency status interacts with future capital gains tax.</li>
+          <li>No coordination with the notary who will eventually calculate your sale tax.</li>
+          <li>No file, no record, no continuity if anything is challenged years later.</li>
+          <li>You are alone the day a tax discrepancy surfaces at closing.</li>
+        </ul>
+      </article>
+
+      <article class="path-card good">
+        <span class="path-tag">A real estate law firm</span>
+        <h3>The Title Solutions route.</h3>
+        <p class="path-desc">Your immigration file becomes part of your real estate file &mdash; handled by the same attorneys who will close your sale.</p>
+        <ul class="path-list">
+          <li>Bilingual senior attorneys with legal accountability for the work.</li>
+          <li>Strategic advisory: your residency is structured around your eventual sale.</li>
+          <li>Direct coordination with the notary, the trustee bank, and the SAT.</li>
+          <li>A complete, retrievable legal file you and your heirs can rely on.</li>
+          <li>One firm from acquisition, through residency, to closing.</li>
+        </ul>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<section class="benefits">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">Why Consider a Permanent Resident Visa</div>
+      <h2>Three benefits, one decision.</h2>
+    </div>
+
+    <div class="benefits-grid">
+      <article class="benefit-card">
+        <div class="benefit-num">01</div>
+        <h3>Material Tax Advantages on Sale</h3>
+        <p>A Permanent Resident Visa allows foreign sellers to claim the property as their primary residence, unlocking deductions and exemptions under Mexican law that can meaningfully reduce capital gains tax due at closing.</p>
+      </article>
+
+      <article class="benefit-card">
+        <div class="benefit-num">02</div>
+        <h3>Long&#8209;Term Security &amp; Peace of Mind</h3>
+        <p>Legal certainty for you and your family. Simpler banking, healthcare access, and day&#8209;to&#8209;day matters in Mexico. A stronger overall investment position from the moment your card is issued.</p>
+      </article>
+
+      <article class="benefit-card">
+        <div class="benefit-num">03</div>
+        <h3>Future&#8209;Proofing Your Investment</h3>
+        <p>By obtaining resident status now &mdash; often years before you actually decide to sell &mdash; you position yourself to maximize the net proceeds when the moment comes. It is preparation, not paperwork.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="timeline-section">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">General Timeframes</div>
+      <h2>Four stages. One window of time you control.</h2>
+      <p class="lead">Subject to individual circumstances and current government processing times. The total runway is not negotiable; the date you start is.</p>
+    </div>
+
+    <div class="timeline">
+      <div class="timeline-step">
+        <div class="timeline-dot">1</div>
+        <div class="duration">2&ndash;4 weeks</div>
+        <h4>Initial Consultation &amp; Document Preparation</h4>
+        <p>We assess your situation, define the strategy, and assemble the supporting documentation.</p>
+      </div>
+
+      <div class="timeline-step">
+        <div class="timeline-dot">2</div>
+        <div class="duration">Immediate</div>
+        <h4>Submission of Application</h4>
+        <p>Once your file is complete, we submit to the Instituto Nacional de Migración without delay.</p>
+      </div>
+
+      <div class="timeline-step">
+        <div class="timeline-dot">3</div>
+        <div class="duration">3&ndash;6 months</div>
+        <h4>Government Processing &amp; Approval</h4>
+        <p>The longest stage and the one outside anyone's control. Average processing time, current as of filing.</p>
+      </div>
+
+      <div class="timeline-step">
+        <div class="timeline-dot">4</div>
+        <div class="duration">Within 30 days</div>
+        <h4>Visa Issuance &amp; Card Delivery</h4>
+        <p>Your Residente Permanente card is issued and delivered, completing the legal change of status.</p>
+      </div>
+    </div>
+
+    <div class="timeline-callout" role="note">
+      <div class="icon">!</div>
+      <div class="text">
+        We recommend beginning the process <strong>at least 12 to 18 months</strong> before you anticipate needing the tax benefits. That margin gives you room to complete each step without pressure &mdash; and protects you against government processing backlogs that no firm can shorten.
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-section" id="apply">
+  <div class="container">
+    <div class="eyebrow">Ready to Explore Your Options?</div>
+    <h2>Speak with a Title Solutions attorney.</h2>
+    <p class="lead">
+      Personalized guidance on how a Permanent Resident Visa can protect your real estate investment and reduce your future tax exposure. Submit the application below and a member of our legal team will be in touch.
+    </p>
+    <a href="/immigration/apply" class="btn btn-primary" style="margin-top: 8px;">
+      Begin My Application <span class="arrow">→</span>
+    </a>
+    <p class="reassurance">No obligation. Your initial consultation is reviewed by a senior bilingual attorney.</p>
+  </div>
+</section>
+
+<footer class="footer-mini">
+  <div class="container">
+    © Title Solutions de México &nbsp;·&nbsp; <a href="/contact">Contact</a> &nbsp;·&nbsp; <a href="/privacy-policy">Privacy</a>
+  </div>
+</footer>
+
+<a href="https://wa.me/529841154054" class="floating-contact">
+  <span class="wa">✆</span>
+  Contact Us
+</a>
+
+</body>
+</html>
